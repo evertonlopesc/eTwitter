@@ -23,13 +23,17 @@
                   </li>
                 </ul>
                 <span class="navbar-text">
-                  <%= current_user.email %>
+                  <%= current_user.username %>
                 </span>
                 <span class="navbar-text">
                   <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "nav-link" %>
                 </span>
               </div>
             </div>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
           </nav>
         <% end %>
         <%= yield %>
