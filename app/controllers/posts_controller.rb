@@ -11,6 +11,10 @@ class PostsController < ApplicationController
   def show
   end
 
+  def search
+    @search = Post.search_for(params[:name])
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
