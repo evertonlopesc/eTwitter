@@ -253,7 +253,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  bootstrap
+  bootstrap (~> 5.1.3)
   byebug
   devise
   factory_bot_rails
