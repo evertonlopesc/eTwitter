@@ -19,7 +19,8 @@
     <%= form.text_area :body, class: "form-text", placeholder: "Body..." %>
   </div>
 
-  <div class="mb-3">
-    <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="actions">
+    <%= link_to 'Back', posts_path, class: "btn btn-secondary" %>
+    <%= form.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>
