@@ -1,0 +1,43 @@
+require : rubocop-rails
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/MethodLength:
+  Exclude:
+    - 'db/migrate/**.rb'
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - 'config/puma.rb'
+
+Style/SymbolArray:
+  Exclude:
+    - 'Gemfile'
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Style/GlobalStdStream:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'config/environments/production.rb'
+
+# RSpec/MultipleExpectations:
+# Enabled: false
