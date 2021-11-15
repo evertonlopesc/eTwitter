@@ -5,11 +5,29 @@ class RelationshipsController < ApplicationController
 
     @relation.save
     redirect_to user_path(other_user)
+
+    @notification = Notification.new
+    send_notification(@notification, @relation.followed_id, "create")
   end
 
   def destroy
     @relation = Relationship.find(params[:id])
+    
+    @notification = Notification.new
+    send_notification(@notification, @relation.followed_id, "destroy")
+
     @relation.destroy
+
     redirect_to user_path(@relation.followed_id)
+  end
+
+  private
+
+  def send_notification(notification, user_id, environment)
+    notification.user_id = user_id
+    notification.message = "#{current_user.username} started following you."
+    notification.is_active = true
+    notification.message = "#{current_user.username} stopped following you." if environment.eql?('destroy')
+    notification.save
   end
 end
