@@ -12,17 +12,30 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Back', posts_path, class: "btn btn-secondary" %><br /><br />
+<p>
+  Followers: <%= @user.followers.count %>
+  Following: <%= @user.following.count %>
+</p>
+
+<%= link_to 'Back', posts_path, class: "btn btn-secondary" %>
+<% if @user.id != current_user.id %>
+  <%= 
+    link_to 'Follow', user_relationships_path(@user), method: :post, class: "btn btn-danger" unless @relation.present?
+  %>
+  <%= 
+    link_to 'Unfollow', relationship_path(@relation.id), method: :delete, class: "btn btn-danger" if @relation.present?
+  %>
+<% end %>
+<br /><br />
 
 <h3 class="h3">Posts</h3>
 
-<div class="container-fluid">
-  <% @posts.each do |post| %>
-    <div class="col">
-      <strong><%= post.title %></strong>
-    </div>
-    <div class="col">
-      <%= post.body %>
-    </div>
-  <% end %>
-</div>
+<% @posts.each do |post| %>
+  <hr>
+  <div class="col">
+    <strong><%= post.title %></strong>
+  </div>
+  <div class="col">
+    <%= post.body %>
+  </div>
+<% end %>

@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = params[:id]
-    @posts = Post.users(user)
+    @user = User.find(params[:id])
+    @posts = Post.users(@user)
+    @relation = @user.followers.find_by(follower: current_user)
   end
 
   private
