@@ -1,0 +1,15 @@
+
+<h1>Search</h1>
+
+<div class="container-fluid">
+  <% @searchs.each do |user| %>
+    <div class="row">
+      <div class="col">
+        <strong><%= user.username %></strong>
+      </div>
+      <div class="col-10">
+        <%= link_to 'Show', user %>
+      </div>
+    </div>
+  <% end %>
+</div>

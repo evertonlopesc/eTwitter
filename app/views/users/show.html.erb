@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Show</h1>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Back', posts_path, class: "btn btn-secondary" %><br /><br />
+
+<h3 class="h3">Posts</h3>
+
+<div class="container-fluid">
+  <% @posts.each do |post| %>
+    <div class="col">
+      <strong><%= post.title %></strong>
+    </div>
+    <div class="col">
+      <%= post.body %>
+    </div>
+  <% end %>
+</div>
