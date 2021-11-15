@@ -3,6 +3,6 @@ FactoryBot.define do
     relationship { nil }
     user { nil }
     message { "MyString" }
-    active { false }
+    is_active { false }
   end
 end
