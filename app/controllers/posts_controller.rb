@@ -9,10 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-  end
 
-  def search
-    @search = Post.search_for(params[:name])
   end
 
   # GET /posts/new
