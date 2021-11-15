@@ -3,7 +3,8 @@ class NotificationsController < ApplicationController
 
   # GET /notifications or /notifications.json
   def index
-    @notifications = Notification.all
+    @notifications = Notification.all.order('created_at DESC')
+    @notification_unread = Notification.unread(current_user.id).count
   end
 
   # GET /notifications/1 or /notifications/1.json
