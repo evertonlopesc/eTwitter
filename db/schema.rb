@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_105415) do
+ActiveRecord::Schema.define(version: 2021_11_15_165320) do
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "relationship_id", null: false
+    t.integer "user_id", null: false
+    t.string "message"
+    t.boolean "is_active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["relationship_id"], name: "index_notifications_on_relationship_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -41,5 +52,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_105415) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notifications", "relationships"
+  add_foreign_key "notifications", "users"
   add_foreign_key "posts", "users"
 end
