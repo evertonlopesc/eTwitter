@@ -26,43 +26,46 @@ Things you may want to cover:
  - Install rails 6.0.4 (use rubygems)
  - Clone this repository.
  - run: 
- ´´´sh
+ ```sh
  bundle install
- ´´´
+ ```
 
  - run: 
- ´´´sh
+ ```sh
  yarn install --check-files
- ´´´
+ ```
 
 ## Database creation
  - Installnstall PostgreSQL
  - run: 
- ´´´sh
+ ```sh
  sudo -i -u postgres (to access the postgres user)
- ´´´
+ ```
  - run: 
- ´´´sh
+ ```sh
  psql (to access the database)
- ´´´
+ ```
  - run: 
- ´´´sh
+ ```sh
  CREATE ROLE etwitter WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'etwitter';
- ´´´
+ ```
  - run: 
- ´´´sh
+ ```sh
  CREATE DATABASE etwitter OWNER etwitter;
- ´´´
+ ```
 
 ## Deployment instructions
 
- - run: rails server
+ - run: 
+ ```sh
+ rails server
+```
 
 ## Images
 ![Login](/app/assets/images/login.png)
 ![Sign up](/app/assets/images/sign_up.png)
 ![Home page](/app/assets/images/home_page.png)
 ![New post](/app/assets/images/new_post.png)
-![Search](/app/assets/images/search.png)
+![Search](/app/assets/images/search_user.png)
 ![User follow](/app/assets/images/follow.png)
 ![Notification](/app/assets/images/notification.png)
