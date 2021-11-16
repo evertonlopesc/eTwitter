@@ -8,17 +8,17 @@
     <%= post.user.username %>
   </strong>
   <%= time_ago_in_words(post.created_at.to_date) %>
-  <div>
+  <div class="fs-3">
     <%= post.title %>
   </div>
-  <div>
+  <div class="fs-4">
     <%= post.body %>
   </div>
-    <%= link_to 'Show', post %>
-    <% if post.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %> 
-    <br>
+  <%= link_to 'Show', post %>
+  <% if post.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %> 
+  <br>
 <% end %>
 
