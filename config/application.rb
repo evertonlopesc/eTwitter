@@ -36,5 +36,6 @@ module ETwitter
     config.active_record.default_timezone = :local
     config.i18n.default_locale = :"pt-BR"
     I18n.enforce_available_locales = false
+    config.active_record.schema_format = :ruby
   end
 end
