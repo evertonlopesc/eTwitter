@@ -68,4 +68,5 @@ Things you may want to cover:
 ![New post](/app/assets/images/new_post.png)
 ![Search](/app/assets/images/search_users.png)
 ![User follow](/app/assets/images/follow.png)
+![User follow](/app/assets/images/search.png)
 ![Notification](/app/assets/images/notification.png)
