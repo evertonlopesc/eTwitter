@@ -31,7 +31,7 @@ module ETwitter
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.factory_bot.definition_file_paths = ["spec/factories"]
+    #config.factory_bot.definition_file_paths = ["spec/factories"]
     config.time_zone = "Brasilia"
     config.active_record.default_timezone = :local
     config.i18n.default_locale = :"pt-BR"
