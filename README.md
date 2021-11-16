@@ -66,6 +66,6 @@ Things you may want to cover:
 ![Sign up](/app/assets/images/sign_up.png)
 ![Home page](/app/assets/images/home_page.png)
 ![New post](/app/assets/images/new_post.png)
-![Search](/app/assets/images/search_user.png)
+![Search](/app/assets/images/search_users.png)
 ![User follow](/app/assets/images/follow.png)
 ![Notification](/app/assets/images/notification.png)
