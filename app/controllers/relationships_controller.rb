@@ -1,24 +1,28 @@
 class RelationshipsController < ApplicationController
   def create
-    other_user = User.find(params[:user_id])
-    @relation = Relationship.new(follower_id: current_user.id, followed_id: other_user.id)
+    ActiveRecord::Base.transaction do
+      other_user = User.find(params[:user_id])
+      @relation = Relationship.new(follower_id: current_user.id, followed_id: other_user.id)
 
-    @relation.save
-    redirect_to user_path(other_user)
+      @relation.save
+      redirect_to user_path(other_user)
 
-    @notification = Notification.new
-    send_notification(@notification, @relation.followed_id, "create")
+      @notification = Notification.new
+      send_notification(@notification, @relation.followed_id, "create")
+    end
   end
 
   def destroy
-    @relation = Relationship.find(params[:id])
-    
-    @notification = Notification.new
-    send_notification(@notification, @relation.followed_id, "destroy")
+    ActiveRecord::Base.transaction do
+      @relation = Relationship.find(params[:id])
+      
+      @notification = Notification.new
+      send_notification(@notification, @relation.followed_id, "destroy")
 
-    @relation.destroy
+      @relation.destroy
 
-    redirect_to user_path(@relation.followed_id)
+      redirect_to user_path(@relation.followed_id)
+    end
   end
 
   private
