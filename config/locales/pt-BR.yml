@@ -139,6 +139,9 @@ pt-BR:
       wrong_length:
         one: não possui o tamanho esperado (1 caracter)
         other: não possui o tamanho esperado (%{count} caracteres)
+      not_saved:
+        one: "1 erro impediu este %{resource} de ser salvo:"
+        other: "%{count} erros impediram este %{resource} de ser salvo:"
     template:
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
