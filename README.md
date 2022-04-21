@@ -6,7 +6,7 @@ Things you may want to cover:
 
 ## Ruby version
 
- - Ruby 3.0.1
+ - Ruby 3.0.2
  - Rails 6.0.4
 
 ## System dependencies
@@ -22,8 +22,8 @@ Things you may want to cover:
 
 ## Configuration
 
- - Install ruby version 3.0.1 (use a version manager)
- - Install rails 6.0.4 (use rubygems)
+ - Install ruby version 3.0.2 (use a version manager)
+ - Install nodejs version 14.19.1
  - Clone this repository.
  - run: 
  ```sh
